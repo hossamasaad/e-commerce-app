@@ -19,13 +19,13 @@ public class Shipping {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int shippingId;
 
-//    @ManyToOne
-//    @JoinColumn(name = "orderId")
-//    private Order order;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "addressId")
-//    private Address address;
+    @ManyToOne
+    @JoinColumn(name = "orderId")
+    private Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "addressId")
+    private Address address;
 
     private double shippingCost;
     private String status;

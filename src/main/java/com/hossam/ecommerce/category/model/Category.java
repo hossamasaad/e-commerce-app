@@ -1,8 +1,7 @@
 package com.hossam.ecommerce.category.model;
 
 
-import com.hossam.ecommerce.customer.model.Customer;
-import com.hossam.ecommerce.payment.model.Payment;
+
 import jakarta.persistence.*;
 import lombok.*;
 
