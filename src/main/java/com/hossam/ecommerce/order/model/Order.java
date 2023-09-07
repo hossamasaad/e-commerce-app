@@ -26,13 +26,13 @@ public class Order {
     @JoinColumn(name = "customerId")
     private Customer customer;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "paymentId")
     private Payment payment;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "cartId")
-    private Cart cartId;
+    private Cart cart;
 
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date createdAt;
