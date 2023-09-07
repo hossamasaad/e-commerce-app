@@ -1,4 +1,4 @@
-package com.hossam.ecommerce.auth.model;
+package com.hossam.ecommerce.admin.model;
 
 import jakarta.persistence.*;
 import lombok.*;
