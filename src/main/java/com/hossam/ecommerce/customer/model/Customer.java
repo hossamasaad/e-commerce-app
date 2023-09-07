@@ -15,14 +15,13 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
+    private Integer customerId;
 
     private String firstName;
     private String lastName;
 
     @Column(unique = true)
     private String email;
-
     private String phone;
 
     @Column(columnDefinition = "TEXT")
@@ -34,4 +33,7 @@ public class Customer {
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date modifiedAt;
 
+    public Customer(Integer customerId) {
+        this.customerId = customerId;
+    }
 }

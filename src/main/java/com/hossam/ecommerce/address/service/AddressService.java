@@ -1,9 +1,12 @@
 package com.hossam.ecommerce.address.service;
 
 
+import com.hossam.ecommerce.address.model.Address;
 import com.hossam.ecommerce.address.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AddressService {
@@ -15,32 +18,29 @@ public class AddressService {
         this.addressRepository = addressRepository;
     }
 
-    // TODO : Get address by id address
+    public List<Address> getAddresses() {
+        return addressRepository.findAll();
+    }
 
-    // TODO : Create new Address
+    public Address getAddressById(int addressId) {
+        return addressRepository.findById(addressId)
+                .orElseThrow(() -> new RuntimeException("Address not found with id: " + addressId));
+    }
 
-    // TODO : Update Address
+    public Address createAddress(Address address){
+        return addressRepository.save(address);
+    }
 
-    // TODO : Delete Address by ID
+    public Address updateAddress(Address address){
+        return addressRepository.save(address);
+    }
 
-    // TODO : Get List of customer Address by customerId
+    public void deleteAddressById(int addressId){
+        addressRepository.deleteById(addressId);
+    }
 
-    // TODO : Get Customer by address Id
-
-    // TODO : Get Postal code by id address
-
-    // TODO : Update Postal code by id address
-
-    // TODO : Get line address by id address
-
-    // TODO : Update line address by id address
-
-    // TODO : Get city by id address
-
-    // TODO : Update city by id address
-
-    // TODO : Get country by id address
-
-    // TODO : Update country by id address
+    public List<Address> getAllCustomerAddresses(int customerId){
+        return addressRepository.getAllCustomerAddresses(customerId);
+    }
 
 }
