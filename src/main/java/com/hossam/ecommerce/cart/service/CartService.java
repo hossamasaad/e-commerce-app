@@ -1,7 +1,6 @@
 package com.hossam.ecommerce.cart.service;
 
 
-import com.hossam.ecommerce.address.model.Address;
 import com.hossam.ecommerce.cart.model.Cart;
 import com.hossam.ecommerce.cart.repository.CartRepository;
 import com.hossam.ecommerce.common.GenericService;
@@ -19,7 +18,7 @@ public class CartService extends GenericService<Cart> {
     }
 
 
-    public List<Address> getAllCustomerCart(int customerId){
+    public List<Cart> getAllCustomerCart(int customerId){
         return ((CartRepository) super.repo).getAllCustomerCarts(customerId);
     }
 }
