@@ -1,11 +1,11 @@
 package com.hossam.ecommerce.address.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.hossam.ecommerce.common.GenericModel;
 import com.hossam.ecommerce.customer.model.Customer;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
 
 @Data
 @ToString
@@ -13,11 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Address {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int addressId;
+public class Address extends GenericModel {
 
     @ManyToOne
     @JoinColumn(name = "customerId")
@@ -28,11 +24,4 @@ public class Address {
     private String lineAddress;
     private String city;
     private String country;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createdAt;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date modifiedAt;
-
 }

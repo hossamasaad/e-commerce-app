@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
 public class GenericController<T extends GenericModel> {
 
-    private final GenericService<T> service;
+    protected final GenericService<T> service;
 
     public GenericController(GenericService<T> service) {
         this.service = service;
