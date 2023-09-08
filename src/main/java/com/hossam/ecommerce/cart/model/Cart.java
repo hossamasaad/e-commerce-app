@@ -1,22 +1,20 @@
 package com.hossam.ecommerce.cart.model;
 
+import com.hossam.ecommerce.common.GenericModel;
 import com.hossam.ecommerce.customer.model.Customer;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
+
 @Data
-@Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Cart {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cartId;
+public class Cart extends GenericModel {
 
     @ManyToOne
     @JoinColumn(name = "customerId")
@@ -24,9 +22,4 @@ public class Cart {
 
     private String status;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createdAt;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date modifiedAt;
 }

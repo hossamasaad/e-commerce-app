@@ -1,23 +1,25 @@
 package com.hossam.ecommerce.cart.service;
 
 
+import com.hossam.ecommerce.address.model.Address;
+import com.hossam.ecommerce.cart.model.Cart;
+import com.hossam.ecommerce.cart.repository.CartRepository;
+import com.hossam.ecommerce.common.GenericService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class CartService {
+public class CartService extends GenericService<Cart> {
 
-    // TODO : Ger Cart by cart id
+    @Autowired
+    public CartService(CartRepository cartRepository) {
+        super(cartRepository);
+    }
 
-    // TODO : Create new cart
 
-    // TODO : Update the cart
-
-    // TODO : Delete the cart by id
-
-    // TODO : Get List of carts by Id
-
-    // TODO : Get Cart status by id
-
-    // TODO : Update cart status by id
-
+    public List<Address> getAllCustomerCart(int customerId){
+        return ((CartRepository) super.repo).getAllCustomerCarts(customerId);
+    }
 }
