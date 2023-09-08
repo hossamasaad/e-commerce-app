@@ -2,10 +2,10 @@ package com.hossam.ecommerce.product.model;
 
 
 import com.hossam.ecommerce.category.model.Category;
+import com.hossam.ecommerce.common.GenericModel;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
 
 @Data
 @Builder
@@ -13,11 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int productId;
+public class Product extends GenericModel {
 
     private String name;
 
@@ -26,11 +22,5 @@ public class Product {
     private Category category;
 
     private double price;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createdAt;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date modifiedAt;
 
 }

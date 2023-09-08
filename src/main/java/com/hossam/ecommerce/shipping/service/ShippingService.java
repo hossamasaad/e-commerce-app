@@ -1,28 +1,15 @@
 package com.hossam.ecommerce.shipping.service;
 
 
+import com.hossam.ecommerce.common.GenericService;
+import com.hossam.ecommerce.shipping.model.Shipping;
+import com.hossam.ecommerce.shipping.repository.ShippingRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ShippingService {
+public class ShippingService extends GenericService<Shipping> {
 
-    // TODO : Get Shipping by id
-
-    // TODO : Update Shipping
-
-    // TODO : Delete Shipping by id
-
-    // TODO : Get Order by shipping id
-
-    // TODO : Get Address by shipping id
-
-    // TODO : Update Address by shipping id
-
-    // TODO : Get shipping cost
-
-    // TODO : Update shipping Cost
-
-    // TODO : Get shipping status
-
-    // TODO : Update Shipping status
+    public ShippingService(ShippingRepository shippingRepository) {
+        super(shippingRepository);
+    }
 }

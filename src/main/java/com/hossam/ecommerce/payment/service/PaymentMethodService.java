@@ -1,20 +1,16 @@
 package com.hossam.ecommerce.payment.service;
 
-public class PaymentMethodService {
+import com.hossam.ecommerce.common.GenericService;
+import com.hossam.ecommerce.payment.model.PaymentMethod;
+import com.hossam.ecommerce.payment.repository.PaymentMethodRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-    // TODO : get payment method by id
+@Service
+public class PaymentMethodService extends GenericService<PaymentMethod> {
 
-    // TODO : Add new payment method
-
-    // TODO : Update payment method
-
-    // TODO : Delete payment method by id
-
-    // TODO : Get payment method name
-
-    // TODO : Update payment method name
-
-    // TODO : Get payment method type
-
-    // TODO : Update payment method type
+    @Autowired
+    public PaymentMethodService(PaymentMethodRepository paymentMethodRepository) {
+        super(paymentMethodRepository);
+    }
 }

@@ -8,6 +8,6 @@ import java.util.List;
 
 
 public interface AddressRepository extends JpaRepository<Address, Integer> {
-    @Query("SELECT a FROM Address a WHERE a.customer.customerId = :customerId")
+    @Query("SELECT a FROM Address a WHERE a.customer.id = :customerId")
     List<Address> getAllCustomerAddresses(int customerId);
 }

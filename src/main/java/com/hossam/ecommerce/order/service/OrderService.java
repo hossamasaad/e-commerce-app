@@ -1,22 +1,15 @@
 package com.hossam.ecommerce.order.service;
 
+import com.hossam.ecommerce.common.GenericService;
+import com.hossam.ecommerce.order.model.Order;
+import com.hossam.ecommerce.order.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OrderService {
-
-    // TODO : Get Order by id
-
-    // TODO : Create new Order
-
-    // TODO : Update Order
-
-    // TODO : Delete order by id
-
-    // TODO : Get List<Orders> created by customer Id
-
-    // TODO : Get payment by orderId
-
-    // TODO : Get cart by orderId
-
+public class OrderService extends GenericService<Order> {
+    @Autowired
+    public OrderService(OrderRepository orderRepository) {
+        super(orderRepository);
+    }
 }

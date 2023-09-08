@@ -1,9 +1,9 @@
 package com.hossam.ecommerce.customer.model;
 
+import com.hossam.ecommerce.common.GenericModel;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
 
 @Data
 @Builder
@@ -11,11 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Customer {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer customerId;
+public class Customer extends GenericModel {
 
     private String firstName;
     private String lastName;
@@ -27,13 +23,8 @@ public class Customer {
     @Column(columnDefinition = "TEXT")
     private String password;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createdAt;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date modifiedAt;
-
-    public Customer(Integer customerId) {
-        this.customerId = customerId;
+    public Customer(Integer id) {
+        super.id = id;
     }
 }

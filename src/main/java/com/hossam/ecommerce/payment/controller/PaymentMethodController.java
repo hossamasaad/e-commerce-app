@@ -1,31 +1,17 @@
 package com.hossam.ecommerce.payment.controller;
 
+import com.hossam.ecommerce.common.GenericController;
 import com.hossam.ecommerce.payment.model.PaymentMethod;
+import com.hossam.ecommerce.payment.service.PaymentMethodService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/payment-method")
-public class PaymentMethodController {
+public class PaymentMethodController extends GenericController<PaymentMethod> {
 
-    @GetMapping("/{paymentMethodId}")
-    public PaymentMethod getPaymentMethodById(@PathVariable int paymentMethodId){
-        return PaymentMethod.builder().build();
+    @Autowired
+    public PaymentMethodController(PaymentMethodService paymentMethodService) {
+        super(paymentMethodService);
     }
-
-    @PostMapping
-    public PaymentMethod addPaymentMethod(@RequestBody PaymentMethod paymentMethod){
-        return paymentMethod;
-    }
-
-    @PutMapping("/{paymentMethodId}")
-    public PaymentMethod updatePaymentMethod(@PathVariable int paymentMethodId, @RequestBody PaymentMethod paymentMethod){
-        return paymentMethod;
-    }
-
-    @DeleteMapping("/{paymentMethodId}")
-    public PaymentMethod deleteCustomer(@PathVariable int paymentMethodId){
-        return PaymentMethod.builder().build();
-    }
-
-
 }

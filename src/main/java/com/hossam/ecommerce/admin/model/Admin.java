@@ -1,9 +1,8 @@
 package com.hossam.ecommerce.admin.model;
 
+import com.hossam.ecommerce.common.GenericModel;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.Date;
 
 @Data
 @Builder
@@ -11,11 +10,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Admin {
+public class Admin extends GenericModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int adminId;
     private String firstName;
     private String lastName;
 
@@ -25,9 +21,4 @@ public class Admin {
     @Column(columnDefinition = "TEXT")
     private String password;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createdAt;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date modifiedAt;
 }

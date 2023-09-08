@@ -1,23 +1,20 @@
 package com.hossam.ecommerce.shipping.model;
 
 import com.hossam.ecommerce.address.model.Address;
+import com.hossam.ecommerce.common.GenericModel;
 import com.hossam.ecommerce.order.model.Order;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
 
 @Data
 @Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Entity
-public class Shipping {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int shippingId;
+public class Shipping extends GenericModel {
 
     @ManyToOne
     @JoinColumn(name = "orderId")
@@ -29,11 +26,5 @@ public class Shipping {
 
     private double shippingCost;
     private String status;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date shippingDate;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date deliveryDate;
 
 }

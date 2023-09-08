@@ -1,32 +1,17 @@
 package com.hossam.ecommerce.order.controller;
 
 
+import com.hossam.ecommerce.common.GenericController;
 import com.hossam.ecommerce.order.model.Order;
+import com.hossam.ecommerce.order.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/order")
-public class OrderController {
-
-    @GetMapping("/{orderId}")
-    public Order getCustomerById(@PathVariable int orderId){
-        return Order.builder().build();
+public class OrderController extends GenericController<Order> {
+    @Autowired
+    public OrderController(OrderService service) {
+        super(service);
     }
-
-    @PostMapping
-    public Order addCustomer(@RequestBody Order order){
-        return order;
-    }
-
-
-    @PutMapping("/{orderId}")
-    public Order updateCustomer(@PathVariable int orderId, @RequestBody Order order){
-        return order;
-    }
-
-    @DeleteMapping("/{orderId}")
-    public Order deleteCustomer(@PathVariable int orderId){
-        return Order.builder().build();
-    }
-
 }

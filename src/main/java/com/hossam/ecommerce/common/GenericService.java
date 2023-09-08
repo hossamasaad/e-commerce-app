@@ -35,6 +35,7 @@ public class GenericService <T extends GenericModel> {
             t.setModifiedAt(new Timestamp(System.currentTimeMillis()));
             return repo.save(t);
         } catch (DataIntegrityViolationException e) {
+            System.out.println(t);
             // Handle the case where the email is duplicated
             throw new IllegalArgumentException("Email is already registered");
         }

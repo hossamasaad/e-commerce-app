@@ -1,25 +1,18 @@
 package com.hossam.ecommerce.category.service;
 
 
+import com.hossam.ecommerce.category.model.Category;
+import com.hossam.ecommerce.category.repository.CategoryRepository;
+import com.hossam.ecommerce.common.GenericService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CategoryService {
+public class CategoryService extends GenericService<Category> {
 
-    // TODO : Get Category By Id
-
-    // TODO : Add new Category
-
-    // TODO : Update Category
-
-    // TODO : Delete Category by id
-
-    // TODO : Get Category by name
-
-    // TODO : Update category name
-
-    // TODO : Get description by id
-
-    // TODO : Update description by id
+    @Autowired
+    public CategoryService(CategoryRepository categoryRepository) {
+        super(categoryRepository);
+    }
 
 }

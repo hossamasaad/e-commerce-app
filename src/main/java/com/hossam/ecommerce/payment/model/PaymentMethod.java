@@ -1,9 +1,9 @@
 package com.hossam.ecommerce.payment.model;
 
+import com.hossam.ecommerce.common.GenericModel;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
 
 @Data
 @Builder
@@ -11,19 +11,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class PaymentMethod {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int methodId;
+public class PaymentMethod extends GenericModel {
 
     @Column(unique = true)
     private String methodName;
     private String type;
 
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date createdAt;
-
-    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date modifiedAt;
 }

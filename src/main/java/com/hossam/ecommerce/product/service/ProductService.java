@@ -1,29 +1,16 @@
 package com.hossam.ecommerce.product.service;
 
 
+import com.hossam.ecommerce.common.GenericService;
+import com.hossam.ecommerce.product.model.Product;
+import com.hossam.ecommerce.product.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductService {
-
-    // TODO : get Product by Id
-
-    // TODO : Add new product
-
-    // TODO : Update product
-
-    // TODO : Delete product by id
-
-    // TODO : Get product name by id
-
-    // TODO : Update product name by id
-
-    // TODO : Get product Category by id
-
-    // TODO : Update product Category by id
-
-    // TODO : Get product price by id
-
-    // TODO : Update product price by id
-
+public class ProductService extends GenericService<Product> {
+    @Autowired
+    public ProductService(ProductRepository productRepository) {
+        super(productRepository);
+    }
 }

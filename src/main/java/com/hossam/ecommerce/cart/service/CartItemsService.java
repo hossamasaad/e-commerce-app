@@ -1,24 +1,16 @@
 package com.hossam.ecommerce.cart.service;
 
+import com.hossam.ecommerce.cart.model.CartItem;
+import com.hossam.ecommerce.cart.repository.CartItemsRepository;
+import com.hossam.ecommerce.common.GenericService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CartItemsService {
+public class CartItemsService extends GenericService<CartItem> {
 
-    // TODO : Get CartItem by id;
-
-    // TODO : Update CartItem
-
-    // TODO : Delete CartItem by Id
-
-    // TODO : Create new cart item
-
-    // TODO : Get Cart Item quantity by Id
-
-    // TODO : Update Cart item quantity by Id
-
-    // TODO : Get product of cartItem by cart ID
-
-    // TODO : Update product of cartItem by cart ID
-
+    @Autowired
+    public CartItemsService(CartItemsRepository cartItemsRepository) {
+        super(cartItemsRepository);
+    }
 }
