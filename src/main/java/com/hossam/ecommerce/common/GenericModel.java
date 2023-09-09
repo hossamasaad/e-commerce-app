@@ -9,7 +9,7 @@ import java.util.Date;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@MappedSuperclass
 public abstract class GenericModel {
 
     @Id
